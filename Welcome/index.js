@@ -1,8 +1,19 @@
-const {Client, Intents} = require('discord.js');
+// File: index.js
+// Author: srietz
+// Description: General Discord Bot
+
+// Discord Requires
+const {	
+	Client, 
+	Intents,
+		} = require('discord.js');
+
+// Global Variables 
 
 const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS]});
-const prefix = '-';
+const prefix = '?';
 const me = 'crash#8350';
+
 client.once('ready', () =>{
     console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -15,6 +26,8 @@ client.on('message', (msg) => {
     if(command === 'ping'){
         msg.channel.send('pong!');
     }
+
+    
 
 });
 
